@@ -1,0 +1,20 @@
+<person>
+<id>123</id>
+<first-name>john</first-name>
+<last-name>tan</last-name>
+<phone-numbers total="1">
+<phone-number>
+<phone-type>mobile1</phone-type>
+<phone-number>asdf</phone-number>
+</phone-number>
+<phone-number>
+<phone-type>mobile2</phone-type>
+<phone-number>asdf</phone-number>
+</phone-number>
+<phone-number>
+<phone-type>mobile3</phone-type>
+<phone-number>asdf</phone-number>
+</phone-number>
+</phone-numbers>
+<email-address>asd@gmail.com</email-address>
+</person>

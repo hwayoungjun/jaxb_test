@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 
+	menu.xml 은 root로 <menu> 를 사용하고,
+	각 메뉴 항목들은 <item> 안에 정의한다.
+
+	각 <item> 은 <name>, <id>, <link>, <child> 를 가질 수 있고,
+	<child> 는 다시 하위 <item> 의 나열을 가질 수 있다.
+
+	<item>이 가질 수 있는 속성은 아래와 같다.
+	- absoluteSee( true or false )	: 어느 조건과도 상관없이 보여져야 하는 경우 true 값을 사용. 기본값은 false.
+	- onlyGrade( positive number )	: 특정 등급에 대해서만 무조건 보여주고 나머지는 보이지 않아야 하는 경우 해당 등급의 등급번호를 입력. 기본값은 -1.
+
+	각 메뉴의 id 값은 부모 메뉴의 id 값 뒤에 두 자리 숫자가 추가로 붙는 형태로 작성한다. 
+
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	$ 각 item 들의 link 값은 경로명의 디렉토리로 구분이 가능하도록 작성해야 한다.											$
+	$ 예를 들어 아래 XML 에서 /adm/account/pwd/form.do 의 /form.do 를 제외한 나머지 경로명( /adm/account/pwd )과		$
+	$ 동일한 경로명을 갖는 메뉴는 없다.																		$
+	$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	
+	메뉴 설정 파일에서 특정 권한등급에게만 허용된 메뉴는
+	전체권한을 소유한 관리자라 하더라도 지정된 권한등급이 아닌 경우에는
+	메뉴가 노출되지 않는다.
+ -->
+<!DOCTYPE xml>
+<menu>
+<!-- 	<items> -->
+		<item>
+			<name>내 계정 관리</name>
+			<id>A01</id>
+<!-- 			<child> -->
+				<item absoluteSee="true">
+					<name>비밀번호 변경</name>
+					<id>A0101</id>
+					<link>/adm/account/pwd/form.do</link>
+					
+					<item absoluteSee="true">
+						<name>3뎁스테스트_1</name>
+						<id>3_1</id>
+					</item>
+					<item absoluteSee="true">
+						<name>3뎁스테스트_2</name>
+						<id>3_2</id>
+					</item>
+					
+				</item>
+				<item absoluteSee="true">
+					<name>계정정보 수정</name>
+					<id>A0102</id>
+					<link>/adm/account/info.do</link>
+				</item>
+				<item absoluteSee="true">
+					<name>로그아웃</name>
+					<id>A0199</id>
+					<link>/logout.do</link>
+				</item>
+<!-- 			</child> -->
+		</item>
+		<item>
+			<name>게시판 형식</name>
+			<id>B01</id>
+<!-- 			<child> -->
+				<item>
+					<name>게시판1</name>
+					<id>B0101</id>
+					<link>/adm/board/default/list.do</link>
+				</item>
+<!-- 			</child> -->
+		</item>
+		<item>
+			<name>관리자</name>
+			<id>Z01</id>
+<!-- 			<child> -->
+	<!-- 		<item onlyGrade="0"> -->
+				<item>
+					<name>계정 목록</name>
+					<id>Z0101</id>
+					<link>/adm/admin/info/list.do</link>
+				</item>
+				<item>
+					<name>권한등급관리</name>
+					<id>Z0102</id>
+					<link>/adm/admin/grade/list.do</link>
+				</item>
+				<item>
+					<name>문의/요청</name>
+					<id>Z0104</id>
+					<link>/adm/admin/ask/list.do</link>
+				</item>
+				<item>
+					<name>활동내역</name>
+					<id>Z0103</id>
+					<link>/adm/admin/log/list.do</link>
+				</item>
+<!-- 			</child> -->
+		</item>
+<!-- 	</items> -->
+</menu>
