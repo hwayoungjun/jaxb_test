@@ -49,7 +49,7 @@
 					<id>A0102</id>
 					<link>/adm/account/info.do</link>
 				</item>
-				<item absoluteSee="true">
+				<item absoluteSee="true" onlyGrade="3">
 					<name>로그아웃</name>
 					<id>A0199</id>
 					<link>/logout.do</link>

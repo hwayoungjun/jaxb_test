@@ -4,14 +4,20 @@ import java.util.List;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlRootElement(name="item")
+@XmlRootElement(name = "item")
 public class Item {
 	private String name;
 	private String id;
 	private String link;
+	
+	@XmlAttribute(name = "absoluteSee")
+	private boolean isAbsoluteSee;
+	@XmlAttribute(name ="onlyGrade")
+	private int onlyGrade;
 	
 	private List<Item> item;
 	
@@ -45,5 +51,21 @@ public class Item {
 
 	public void setItem(List<Item> item) {
 		this.item = item;
+	}
+
+	public boolean isAbsoluteSee() {
+		return isAbsoluteSee;
+	}
+
+	public void setAbsoluteSee(boolean isAbsoluteSee) {
+		this.isAbsoluteSee = isAbsoluteSee;
+	}
+
+	public int getOnlyGrade() {
+		return onlyGrade;
+	}
+
+	public void setOnlyGrade(int onlyGrade) {
+		this.onlyGrade = onlyGrade;
 	}
 }
